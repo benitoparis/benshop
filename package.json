@@ -1,0 +1,14 @@
+{
+  "name": "benoitshop",
+  "version": "1.0.0",
+  "description": "ma boutique sur angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "ben",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
+}
