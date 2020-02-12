@@ -1,21 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { shopProductsDetailsComponent } from '../components/shop-product-details/shop-products.component';
-
+import { shopProductDetailsComponent } from '../components/shop-product-details/shop-products.component';
+import { shopProductsListingComponent } from '../components/shop-product-details/shop-products.component';
+import { shopShoppingCartComponent } from '../components/shop-product-details/shop-products.component';
 
 const appRoutes: Routes = [
-  { path: 'products', component: shopProductsComponent, data: { title: 'Heroes List' } },
-  { path: 'product/:id', component: HeroDetailComponent },
+
+  {
+    path: 'category/:id',
+    component: XXXX,
+  },
+  { path: 'product/:id', component: shopProductsListingComponent },
+
   {
     path: 'shopping-cart',
-    component: HeroListComponent,
+    component: shopShoppingCartComponent,
     data: { title: 'Shopping Cart' }
   },
-  { path: '',
+  { path: 'home',
     redirectTo: '/products',
     pathMatch: 'full'
   },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', redirectTo: '/products', pathMatch: 'full' }
 ];
 
 @NgModule({

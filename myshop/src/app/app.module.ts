@@ -8,6 +8,8 @@ import { ShopShoppingCartComponent } from './components/shop-shopping-cart/shop-
 import { ShopProductDetailsComponent } from './components/shop-product-details/shop-product-details.component';
 
 import { ProductsListService } from './services/products-listing/products-list.service';
+import { ShopCartService } from './services/shopping-cart/shop-cart.service';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { ProductsListService } from './services/products-listing/products-list.s
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ProductsListService],
+  providers: [ProductsListService, ShopCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
