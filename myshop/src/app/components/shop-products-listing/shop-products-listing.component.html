@@ -1,4 +1,14 @@
-<section>
+<div id="tabs">
+  <div>
+    <a *ngFor="let categoryName of categories"
+    [routerLink]="['/category', categoryName]">
+    {{ categoryName }}
+    </a>
+  </div>
+<div>
+
+
+<section class="my-5">
   <div class="container">
     <div class="row">
       <div class="col-4" *ngFor="let product of filteredProducts">
