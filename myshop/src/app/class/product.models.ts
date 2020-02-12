@@ -1,17 +1,26 @@
 
 // Classe des produits
 export class Product {
+
+// Déclaration des propriétés
+id : number;
+name: string;
+price: number;
+image: string;
+category: string;
+tva: number;
+
  // constructeur
- constructor(
-   public id: number,
-   public name: string,
-   public price: number,
-   public image: string,
+ constructor (
+     product,
+     categoryName
    ){
-   this.id = id;
-   this.name = name;
-   this.price = price;
-   this.image = image;
+   this.id = product.id;
+   this.name = product.name;
+   this.price = product.price;
+   this.image = product.image;
+   this.tva = product.tva;
+   this.category = categoryName;
  }
 
 }
