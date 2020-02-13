@@ -9,6 +9,7 @@ import { ShopProductDetailsComponent } from './components/shop-product-details/s
 
 import { ProductsListService } from './services/products-listing/products-list.service';
 import { ShopCartService } from './services/shopping-cart/shop-cart.service';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ShopCartService } from './services/shopping-cart/shop-cart.service';
     AppComponent,
     ShopProductsListingComponent,
     ShopShoppingCartComponent,
-    ShopProductDetailsComponent
+    ShopProductDetailsComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

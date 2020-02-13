@@ -1,27 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { shopProductDetailsComponent } from '../components/shop-product-details/shop-products.component';
-import { shopProductsListingComponent } from '../components/shop-product-details/shop-products.component';
-import { shopShoppingCartComponent } from '../components/shop-product-details/shop-products.component';
+import { ShopProductDetailsComponent } from './components/shop-product-details/shop-product-details.component';
+import { ShopProductsListingComponent } from './components/shop-products-listing/shop-products-listing.component';
+import { ShopShoppingCartComponent } from './components/shop-shopping-cart/shop-shopping-cart.component';
 
 const appRoutes: Routes = [
 
-  {
-    path: 'category/:id',
-    component: XXXX,
+  { path: '',
+    //redirectTo: 'category/:id',
+    component: ShopProductsListingComponent,
   },
-  { path: 'product/:id', component: shopProductsListingComponent },
-
+  {
+    path: 'category',
+    component: ShopProductsListingComponent,
+  },
+  {
+    path: 'category/:id/product/;productid',
+    component: ShopProductDetailsComponent,
+  },
   {
     path: 'shopping-cart',
-    component: shopShoppingCartComponent,
+    component: ShopShoppingCartComponent,
     data: { title: 'Shopping Cart' }
   },
-  { path: 'home',
-    redirectTo: '/products',
-    pathMatch: 'full'
-  },
-  { path: '**', redirectTo: '/products', pathMatch: 'full' }
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
