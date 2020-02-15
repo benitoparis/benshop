@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../class/product.models';
 import { ProductsListService } from '../../services/products-listing/products-list.service';
 import { ActivatedRoute} from '@angular/router';
+import { BasketItem } from '../../class/basket-Item.models';
 
 @Component({
   selector: 'app-shop-products-listing',
@@ -40,8 +41,10 @@ export class ShopProductsListingComponent implements OnInit {
       this.filteredProducts = this.productsListingService.getProductsByCategory(this.categoryId);
     });
 
-
-
+    // On ajoute un produit dans la liste du panier
+    addProduct(){
+      new BasketItem(product, quantity);
+    }
 
 
   }

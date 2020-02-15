@@ -9,6 +9,9 @@
   "author": "ben",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.4.1"
+    "@angular/animations": "^9.0.1",
+    "angular-font-awesome": "^3.1.2",
+    "bootstrap": "^4.4.1",
+    "ngx-toastr": "^12.0.0"
   }
 }

@@ -9,7 +9,7 @@ export class ProductsListService {
   categoryList: any;
   allProducts: Product[];
   data: any;
-  dataFromBackEnd :  = {
+  dataFromBackEnd = {
      "categories":[
         {
            "id": 1,

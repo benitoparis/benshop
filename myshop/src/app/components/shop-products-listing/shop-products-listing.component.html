@@ -16,7 +16,7 @@
       <div class="col-4" *ngFor="let product of filteredProducts">
 
         <!-- encart produit -->
-        <app-product-card [product]="product"></app-product-card>
+        <app-product-card [product]="product" (addedProduct)="addProduct($event)"></app-product-card>
 
       </div>
 
