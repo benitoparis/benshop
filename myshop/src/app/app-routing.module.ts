@@ -7,7 +7,7 @@ import { ShopShoppingCartComponent } from './components/shop-shopping-cart/shop-
 const appRoutes: Routes = [
 
   { path: '',
-    redirectTo: 'category/boissons',
+    redirectTo: 'category/boissons', pathMatch: 'full'
   },
   {
     path: 'category',

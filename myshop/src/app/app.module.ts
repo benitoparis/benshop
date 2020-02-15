@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,9 +11,7 @@ import { ShopProductDetailsComponent } from './components/shop-product-details/s
 import { ProductsListService } from './services/products-listing/products-list.service';
 import { ShopCartService } from './services/shopping-cart/shop-cart.service';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+//import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -27,8 +27,8 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     AppRoutingModule,
     CommonModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    //BrowserAnimationsModule,
+    //ToastrModule.forRoot()
 
   ],
   providers: [ProductsListService, ShopCartService],

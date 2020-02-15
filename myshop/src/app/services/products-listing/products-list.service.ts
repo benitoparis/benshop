@@ -135,7 +135,7 @@ export class ProductsListService {
   // Méthode qui renvoie tous les produits d'une catégorie spécifique
   getProductsByCategory(categoryName: string): any {
     return this.categoryList.find(cat => {
-        return cat['name'] === categoryName;
+        return cat['name'].toLowerCase() === categoryName.toLowerCase();
     })['products'];
   }
 

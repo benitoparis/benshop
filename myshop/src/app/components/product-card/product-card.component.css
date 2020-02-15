@@ -42,85 +42,45 @@ p{
   color: $giallo;
 }
 
-
+*/
+/
 .product{
-  //height:500px;
-  width:600px;
+  height:500px;
   background:white;
   position:relative;
-  left:calc(50% - 300px);
-  margin-top:calc(50vh - 250px);
-  &.action{
-    animation: bounce 1s $cubicBounce infinite;
-  }
-  .header{
-    height:40px;
-    position:relative;
-    padding:20px;
-    .back{
-      position:relative;
-      width:0px;
-      height:0px;
-      border-top: 30px solid $senape;
-      border-bottom: 30px solid transparent;
-      border-left: 30px solid $senape;
-      border-right: 30px solid transparent;
-      &:before{
-        content:"←";
-        position:absolute;
-        color:rgba(255,255,255,0.9);
-        font-size:1.3rem;
-        font-weight:bold;
-        top:-22px;
-        left:-22px;
-      }
-    }
-  }
-*/
-
-  .main{
-    border: 1px solid #C0C5C7;
-    padding: 30px;
-    box-sizing: border-box;
-  }
-  .quantity{
-    margin-top:40px;
-    color: #333;
-  }
-  h1{
-    font-size:4.5rem;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    margin: 0 -5px -15px;
-    color:#232e3a;
-  }
-  h2{
-    color:#999999;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    margin: 0 0;
-    text-transform:uppercase;
-  }
-  h3{
-    color:#232e3a;
-    margin:0;
-  }
-  img{
-    max-width:90%;
-    margin-left:25px;
-  }
-  .left,
-  .right{
-    width:40%;
-    padding: 0 calc(5% - 1px);
-  }
-  .right{
-    color:#999;
-    font-size:.78rem;
-    line-height: 1.5;
-  }
+  border: 1px solid #C0C5C7;
+  box-shadow: 10px 1px 1px red;
+}
+.header{
+  height:40px;
+  position:relative;
+  padding:20px;
+}
 
 
+
+.main{
+
+}
+.quantity{
+  margin-top:40px;
+  color: #333;
+}
+h1{
+
+}
+h2{
+
+}
+h3{
+
+}
+img{
+}
+
+
+
+/*
 
   .footer{
     position:absolute;
@@ -151,7 +111,7 @@ p{
 
 
 
-/*
+
 .left{
   float:left;
 }

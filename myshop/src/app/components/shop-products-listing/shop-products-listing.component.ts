@@ -3,6 +3,7 @@ import { Product } from '../../class/product.models';
 import { ProductsListService } from '../../services/products-listing/products-list.service';
 import { ActivatedRoute} from '@angular/router';
 import { BasketItem } from '../../class/basket-Item.models';
+import { ShopCartService } from '../../services/shopping-cart/shop-cart.service';
 
 @Component({
   selector: 'app-shop-products-listing',
@@ -20,7 +21,8 @@ export class ShopProductsListingComponent implements OnInit {
   // Constructeur
   constructor(
     private productsListingService : ProductsListService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private shopCartService: ShopCartService
   )
   { }
 
@@ -40,13 +42,15 @@ export class ShopProductsListingComponent implements OnInit {
       // On récupère la liste des produits corespondant à la catégorie demandée
       this.filteredProducts = this.productsListingService.getProductsByCategory(this.categoryId);
     });
-
-    // On ajoute un produit dans la liste du panier
-    addProduct(){
-      new BasketItem(product, quantity);
-    }
-
-
   }
 
+  // On ajoute un produit dans la liste du panier
+  addProduct(product, quantity){
+    const item = new BasketItem(product, quantity);
+    this.shopCartService.createBasketItem(item);
+  }
+
+
 }
+
+

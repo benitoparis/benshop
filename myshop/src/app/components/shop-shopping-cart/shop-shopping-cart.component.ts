@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute, NavigationEnd } from '@angular/router';
 import { BasketItem } from '../../class/basket-Item.models';
+import { ShopCartService } from '../../services/shopping-cart/shop-cart.service';
+import { ProductsListService } from '../../services/products-listing/products-list.service';
 
 @Component({
   selector: 'app-shop-shopping-cart',
@@ -10,26 +12,26 @@ import { BasketItem } from '../../class/basket-Item.models';
 })
 export class ShopShoppingCartComponent implements OnInit {
 
-  // Déclaration des variables
-  itemsInTheBasket : BasketItem[];
+  itemsList: BasketItem[];
+  categories = [];
 
   // Constructeur
   constructor(
    private router: Router,
-   private activatedRoute: ActivatedRoute) { }
+   private activatedRoute: ActivatedRoute,
+   private shopCartService: ShopCartService,
+   private productsListService: ProductsListService
+   ) { }
 
   ngOnInit() {
+
+    this.categories = this.productsListService.getCategories();
+
+    this.itemsList = this.shopCartService.getitemsInTheBasket();
+
   }
 
 
-  // Méthode qui ajoute un nouvel item dans le panier
-  createBasketItem(item: BasketItem){
-    this.itemsInTheBasket.push(item);
-  }
 
-  // Méthode pour vider le panier
-  emptyBasket(){
-    this.itemsInTheBasket = [];
-  }
 
 }

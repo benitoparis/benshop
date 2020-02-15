@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../class/product.models';
-import { ToastrService } from 'ngx-toastr';
+//import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-card',
@@ -15,7 +15,9 @@ export class ProductCardComponent implements OnInit {
 
 
   // Constructeur
-  constructor(private toastr: ToastrService) { }
+  constructor(
+    // private toastr: ToastrService
+  ) { }
 
   // A l'initialisation
   ngOnInit() {
@@ -26,7 +28,8 @@ export class ProductCardComponent implements OnInit {
   // Lorsque l'on clique sur ajouter au panier
   onClickAddProduct(product: Product){
     this.addedProduct.emit(product);
-    this.toastr.success('Votre produit a été ajouté');
+    console.log('product', product);
+    // this.toastr.success('Votre produit a été ajouté');
   }
 
 }
