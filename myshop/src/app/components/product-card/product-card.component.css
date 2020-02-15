@@ -41,8 +41,10 @@ p{
 .yellow{
   color: $giallo;
 }
+
+
 .product{
-  height:500px;
+  //height:500px;
   width:600px;
   background:white;
   position:relative;
@@ -74,46 +76,52 @@ p{
       }
     }
   }
+*/
+
   .main{
-    padding:0 30px;
+    border: 1px solid #C0C5C7;
+    padding: 30px;
     box-sizing: border-box;
-    .quantity{
-      margin-top:40px;
-      color: #333;
-    }
-    h1{
-      font-size:4.5rem;
-      -webkit-margin-before: 0;
-      -webkit-margin-after: 0;
-      margin: 0 -5px -15px;
-      color:#232e3a;
-    }
-    h2{
-      color:#999999;
-      -webkit-margin-before: 0;
-      -webkit-margin-after: 0;
-      margin: 0 0;
-      text-transform:uppercase;
-    }
-    h3{
-      color:#232e3a;
-      margin:0;
-    }
-    img{
-      max-width:90%;
-      margin-left:25px;
-    }
-    .left,
-    .right{
-      width:40%;
-      padding: 0 calc(5% - 1px);
-    }
-    .right{
-      color:#999;
-      font-size:.78rem;
-      line-height: 1.5;
-    }
   }
+  .quantity{
+    margin-top:40px;
+    color: #333;
+  }
+  h1{
+    font-size:4.5rem;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    margin: 0 -5px -15px;
+    color:#232e3a;
+  }
+  h2{
+    color:#999999;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    margin: 0 0;
+    text-transform:uppercase;
+  }
+  h3{
+    color:#232e3a;
+    margin:0;
+  }
+  img{
+    max-width:90%;
+    margin-left:25px;
+  }
+  .left,
+  .right{
+    width:40%;
+    padding: 0 calc(5% - 1px);
+  }
+  .right{
+    color:#999;
+    font-size:.78rem;
+    line-height: 1.5;
+  }
+
+
+
   .footer{
     position:absolute;
     bottom:0;
@@ -121,7 +129,8 @@ p{
     width:calc(90% - 40px);
     left:10%;
     border-top: 1px solid #ccc;
-    .left{
+  }
+  .footer.left{
       p:before{
         content:"Total Price";
         text-transform:uppercase;
@@ -131,15 +140,18 @@ p{
         top:-12px;
         width:200%;
       }
-    }
-    p{
+  }
+
+
+  p.footer.left{
     color:$senape;
     position:relative;
     font-size:1.5rem;
-    }
   }
-}
 
+
+
+/*
 .left{
   float:left;
 }
@@ -152,4 +164,5 @@ p{
   50%{
     transform: translateX(10px);
   }
-}*/
+}
+*/

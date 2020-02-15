@@ -14,6 +14,7 @@ export class ShopProductsListingComponent implements OnInit {
   filteredProducts: Product[];
   categoryId: string;
   productId: string;
+  categories: any[];
 
   // Constructeur
   constructor(
@@ -25,15 +26,23 @@ export class ShopProductsListingComponent implements OnInit {
   // A l'initialisation
   ngOnInit() {
 
-    // On récupère les paramètres d'url
-    // this.activeRoute.params.subscribe(routeParams => {
-    //   this.categoryId = routeParams['id'];
-    //   this.productId = routeParams['idProduct'] ? routeParams['idProduct'] : null ;
-    // });
+    this.categories = this.productsListingService.getCategories();
+
+    //On récupère les paramètres d'url
+    this.activeRoute.params.subscribe(routeParams => {
+      this.categoryId = routeParams['id'];
+      this.productId = routeParams['idProduct'] ? routeParams['idProduct'] : null ;
+
+      console.log('this.categoryId', this.categoryId);
+      console.log('this.productId', this.productId);
+
+      // On récupère la liste des produits corespondant à la catégorie demandée
+      this.filteredProducts = this.productsListingService.getProductsByCategory(this.categoryId);
+    });
 
 
-  // On récupère la liste des produits corespondant à la catégorie demandée
-  //this.filteredProducts = this.productsListingService.getProductsByCategory(this.categoryId);
+
+
 
   }
 

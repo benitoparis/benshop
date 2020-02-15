@@ -7,11 +7,14 @@ import { ShopShoppingCartComponent } from './components/shop-shopping-cart/shop-
 const appRoutes: Routes = [
 
   { path: '',
-    //redirectTo: 'category/:id',
-    component: ShopProductsListingComponent,
+    redirectTo: 'category/boissons',
   },
   {
     path: 'category',
+    component: ShopProductsListingComponent,
+  },
+  {
+    path: 'category/:id',
     component: ShopProductsListingComponent,
   },
   {

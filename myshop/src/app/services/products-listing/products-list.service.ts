@@ -9,9 +9,10 @@ export class ProductsListService {
   categoryList: any;
   allProducts: Product[];
   data: any;
-  dataFromBackEnd : any = {
+  dataFromBackEnd :  = {
      "categories":[
         {
+           "id": 1,
            "name":"Boissons",
            "products":[
               {
@@ -45,6 +46,7 @@ export class ProductsListService {
            ]
         },
         {
+           "id":2,
            "name":"Sandwich",
            "products":[
               {
@@ -71,6 +73,7 @@ export class ProductsListService {
            ]
         },
         {
+           "id": 3,
            "name":"Snacks",
            "products":[
               {
@@ -113,10 +116,12 @@ export class ProductsListService {
      ]
   }
 
+  // Constructeur
   constructor() {
 
 
-    this.data = JSON.parse('{ "categories": []}');
+    this.data = JSON.stringify(this.dataFromBackEnd);
+    this.data = JSON.parse(this.data);
 
     this.getCategories();
 
@@ -124,8 +129,7 @@ export class ProductsListService {
 
   // Méthode qui récupère la liste des catégories
   getCategories(){
-    this.categoryList = [{ name :'boissons', products: []}];
-    // this.categoryList = this.data['categories'];
+    return this.categoryList = this.data['categories'];
   }
 
   // Méthode qui renvoie tous les produits d'une catégorie spécifique

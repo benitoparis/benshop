@@ -1,25 +1,22 @@
+<!-- les onglets - liste des catégories -->
 <div id="tabs">
-  <div>
-    <a *ngFor="let categoryName of categories"
-    [routerLink]="['/category', categoryName]">
-    {{ categoryName }}
-    </a>
-  </div>
-<div>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" *ngFor="let category of categories"
+      [routerLink]="['/category', category.name]" class="nav-link active cursor-pointer">
+        {{ category.name }}
+    </li>
+  </ul>
+</div>
 
-
+<!-- Listing des produits -->
 <section class="my-5">
   <div class="container">
     <div class="row">
 
-
-      Les produits
-
       <div class="col-4" *ngFor="let product of filteredProducts">
 
-<!--       <app-product-card [product]="product"></app-product-card> -->
-dsdsdds
-
+        <!-- encart produit -->
+        <app-product-card [product]="product"></app-product-card>
 
       </div>
 

@@ -1,3 +1,34 @@
-<p>
-  product-card works!
-</p>
+<div class="product">
+  <div class="header">
+    <div class="back"></div>
+  </div>
+  <div class="main">
+    <div class="left">
+      <h1>{{ product.name }}</h1>
+      <h2 class="badge badge-success">En stock</h2>
+      <h3 class="text-right">{{ product.price }} €</h3>
+      <img src="{{ product.image }}" alt="" />
+    </div>
+    <div class="right">
+      <p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      <p>
+        <span class="fa fa-star yellow"></span>
+        <span class="fa fa-star yellow"></span>
+        <span class="fa fa-star yellow"></span>
+        <span class="fa fa-star yellow"></span>
+        <span class="fa fa-star"></span>
+        <span>(4,5 - 172 Commentaires)</span>
+      </p>
+      <p class="quantity">Quantité <span class="fa fa-angle-left angle"></span><span id="qt">3</span><span class="fa fa-angle-right angle"></span></p>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="left">
+      <p id="price">{{ product.price }}</p>
+    </div>
+    <div class="right">
+      <p class="badge badge-warning p-2">Ajouter au panier</p>
+    </div>
+  </div>
+</div>
