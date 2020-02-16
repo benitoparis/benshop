@@ -12,6 +12,7 @@ import { ProductsListService } from '../../services/products-listing/products-li
 })
 export class ShopShoppingCartComponent implements OnInit {
 
+  // Déclaration des variables
   itemsList: BasketItem[];
   categories = [];
   total = 0;
@@ -30,21 +31,29 @@ export class ShopShoppingCartComponent implements OnInit {
 
     this.itemsList = this.shopCartService.getitemsInTheBasket();
 
+    this.getTotalPrice();
+
   }
 
 
   // Supprimer un item du panier
   removeItem(index: number){
-    alert('removeItem');
     this.shopCartService.removeItemFromBasket(index);
   }
 
   // Au changement de quantité
-  onChangeQuantity(){
-    this.total = this.shopCartService.getTotalPrice();
+  onChangeQuantity(itemIndex, event){
+    const items = this.shopCartService.getitemsInTheBasket();
+     const item = items[itemIndex];
+     item.quantity = event.target.value;
+     this.getTotalPrice();
+
   }
 
-
+  // Récupère le montant total du panier
+  getTotalPrice(){
+    this.total = this.shopCartService.getTotalPrice();
+  }
 
 
 }

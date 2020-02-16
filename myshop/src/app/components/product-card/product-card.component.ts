@@ -28,7 +28,6 @@ export class ProductCardComponent implements OnInit {
   // Lorsque l'on clique sur ajouter au panier
   onClickAddProduct(product: Product){
     this.addedProduct.emit(product);
-    console.log('product', product);
     // this.toastr.success('Votre produit a été ajouté');
   }
 
