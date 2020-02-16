@@ -14,10 +14,19 @@
     <div class="row">
       fdfdfd
 
-      <div class="col-6" *ngFor="let item of itemsList">
-        dsdsds
+      <div class="col-12" *ngFor="let item of itemsList">
+        <h1>{{ item.product.name }}</h1>
 
-        {{ item.quantity}}
+        <div class="row">
+          <div class="col-8">
+            <h2>{{ item.product.price }}</h2>
+          </div>
+          <div class="col-4">
+            <h2>{{ item.product.tva }}</h2>
+          </div>
+        </div>
+
+        {{ item.product.name }}
 
       </div>
 

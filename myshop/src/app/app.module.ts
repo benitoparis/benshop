@@ -11,6 +11,7 @@ import { ShopProductDetailsComponent } from './components/shop-product-details/s
 import { ProductsListService } from './services/products-listing/products-list.service';
 import { ShopCartService } from './services/shopping-cart/shop-cart.service';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { HeaderComponent } from './shared/layout/header/header.component';
 //import { ToastrModule } from 'ngx-toastr';
 
 
@@ -20,7 +21,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     ShopProductsListingComponent,
     ShopShoppingCartComponent,
     ShopProductDetailsComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
