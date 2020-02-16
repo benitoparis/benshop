@@ -14,6 +14,7 @@ export class ShopShoppingCartComponent implements OnInit {
 
   itemsList: BasketItem[];
   categories = [];
+  total = 0;
 
   // Constructeur
   constructor(
@@ -29,6 +30,18 @@ export class ShopShoppingCartComponent implements OnInit {
 
     this.itemsList = this.shopCartService.getitemsInTheBasket();
 
+  }
+
+
+  // Supprimer un item du panier
+  removeItem(index: number){
+    alert('removeItem');
+    this.shopCartService.removeItemFromBasket(index);
+  }
+
+  // Au changement de quantité
+  onChangeQuantity(){
+    this.total = this.shopCartService.getTotalPrice();
   }
 
 

@@ -36,9 +36,6 @@ export class ShopProductsListingComponent implements OnInit {
       this.categoryId = routeParams['id'];
       this.productId = routeParams['idProduct'] ? routeParams['idProduct'] : null ;
 
-      console.log('this.categoryId', this.categoryId);
-      console.log('this.productId', this.productId);
-
       // On récupère la liste des produits corespondant à la catégorie demandée
       this.filteredProducts = this.productsListingService.getProductsByCategory(this.categoryId);
     });

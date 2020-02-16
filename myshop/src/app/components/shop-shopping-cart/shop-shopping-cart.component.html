@@ -12,24 +12,53 @@
 <section class="my-5">
   <div class="container">
     <div class="row">
-      fdfdfd
 
-      <div class="col-12" *ngFor="let item of itemsList">
+
+      <div class="col-12 card py-1 my-1" *ngFor="let item of itemsList;let index = index">
         <h1>{{ item.product.name }}</h1>
 
         <div class="row">
-          <div class="col-8">
-            <h2>{{ item.product.price }}</h2>
+          <div class="col-3">
+            <img class="img-fluid" src="{{ item.product.image }}" alt="" />
           </div>
-          <div class="col-4">
-            <h2>{{ item.product.tva }}</h2>
+          <div class="col-6 price">
+            <div class="d-flex">
+              <h2>{{ item.product.price }} €</h2>
+              <h2>{{ item.product.tva }} </h2>
+              <p class="px-2"> Dont TVA {{ item.product.price * item.product.tva / 100 }} €</p>
+            </div>
+            <div>
+              ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiu
+            </div>
+
+          </div>
+          <div class="col-2">
+            <div>
+              <label>Quantité</label>
+              <select class="form-control" (change)="onChangeQuantity($event)">
+                <option value="1"> 1</option>
+                <option value="2"> 2</option>
+                <option value="3"> 3</option>
+              </select>
+            </div>
+            <div class="pt-5">
+              <button class="" (click)="removeItem(index)">Supprimer</button>
+            </div>
           </div>
         </div>
 
-        {{ item.product.name }}
+      </div>
+      <div class="card container mt-5" *ngIf="itemsList.length > 0">
+        TOTAL
+      </div>
 
+      <div *ngIf="itemsList.length === 0">
+        <div>
+          <span>Il n'y a aucun article dans votre panier</span>
+        </div>
       </div>
 
     </div>
+
   </div>
 </section>

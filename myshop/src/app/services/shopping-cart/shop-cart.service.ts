@@ -16,9 +16,8 @@ export class ShopCartService {
   }
 
 
-  // Méthode qui ajoute un nouvel item dans le panier
+  // Méthode qui ajoute un nouvel article dans le panier
   createBasketItem(item: BasketItem){
-    console.log('itemsInTheBasket', this.itemsInTheBasket);
     //this.itemsInTheBasket.next(item);
     this.itemsInTheBasket.push(item);
   }
@@ -29,8 +28,21 @@ export class ShopCartService {
 
   // Récupère les items
   getitemsInTheBasket() {
-    console.log('this.itemsInTheBasket la', this.itemsInTheBasket);
     return this.itemsInTheBasket;
+  }
+
+  // Méthode qui permet de supprimer un article du panier
+  removeItemFromBasket(index: number){
+    this.itemsInTheBasket.splice(index, 1);
+  };
+
+  // Méthode qui calcule le prix total
+  getTotalPrice(){
+    let totalPrice = 0;
+    this.itemsInTheBasket.forEach(item=> {
+      totalPrice +=(item.product.price * item.quantity);
+    });
+    return totalPrice;
   }
 
 
